@@ -110,7 +110,14 @@ const FavStory = (props) => {
             onSubmit={(e) => {
               e.preventDefault();
 
-              dispatch(addCommentFavStory(story._id, text));
+              dispatch(
+                addCommentFavStory(
+                  story._id,
+                  props.match.params.id,
+                  user._id,
+                  text
+                )
+              );
               setText('');
             }}
           >
@@ -166,7 +173,12 @@ const FavStory = (props) => {
                             className={`btn btn-danger ${classes.buton}`}
                             onClick={(e) => {
                               dispatch(
-                                removeCommentFavStory(com._id, story._id)
+                                removeCommentFavStory(
+                                  com._id,
+                                  props.match.params.id,
+                                  user._id,
+                                  story._id
+                                )
                               );
                             }}
                             type='button'

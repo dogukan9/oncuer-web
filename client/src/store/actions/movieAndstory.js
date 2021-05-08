@@ -17,6 +17,8 @@ export const REMOVE_COMMENT_MOVIE = 'REMOVE_COMMENT_MOVIE';
 export const ADD_COMMENT_STORY = 'ADD_COMMENT_STORY';
 export const REMOVE_COMMENT_STORY = 'REMOVE_COMMENT_STORY';
 export const DISLIKE_STORYY = 'DISLIKE_STORYY';
+export const ADD_MOVIE = 'ADD_MOVIE';
+export const ADD_STORY = 'ADD_STORY';
 
 export const getMoviesAndStories = () => {
   return async (dispatch) => {
@@ -88,35 +90,7 @@ export const dislikeMovie = (movieId) => {
     }
   };
 };
-/*
-export const likeMoviee = (movieId) => {
-  return async (dispatch) => {
-    try {
-      const res = await axios.put(`/api/movies/likeMoviee/${movieId}`);
-      dispatch({
-        type: LIKE_MOVIEE,
-        payload: res.data,
-      });
-    } catch (err) {
-      console.log('hata');
-    }
-  };
-};
 
-export const dislikeMoviee = (movieId) => {
-  return async (dispatch) => {
-    try {
-      const res = await axios.put(`/api/movies/DislikeMoviee/${movieId}`);
-      dispatch({
-        type: DISLIKE_MOVIEE,
-        payload: res.data,
-      });
-    } catch (err) {
-      console.log('hata');
-    }
-  };
-};
-*/
 export const likeStory = (storyId) => {
   return async (dispatch) => {
     try {
@@ -144,35 +118,7 @@ export const dislikeStory = (storyId) => {
     }
   };
 };
-/*
-export const likeStoryy = (storyId) => {
-  return async (dispatch) => {
-    try {
-      const res = await axios.put(`/api/stories/likeStoryy/${storyId}`);
-      dispatch({
-        type: LIKE_STORYY,
-        payload: res.data,
-      });
-    } catch (err) {
-      console.log('hata');
-    }
-  };
-};
 
-export const dislikeStoryy = (storyId) => {
-  return async (dispatch) => {
-    try {
-      const res = await axios.put(`/api/stories/DislikeStoryy/${storyId}`);
-      dispatch({
-        type: DISLIKE_STORYY,
-        payload: res.data,
-      });
-    } catch (err) {
-      console.log('hata');
-    }
-  };
-};
-*/
 export const addCommentStory = (storyId, text) => {
   return async (dispatch) => {
     const config = {
@@ -254,5 +200,42 @@ export const removeCommentMovie = (comId, movieId) => {
     } catch (err) {
       console.log('hata var');
     }
+  };
+};
+
+export const addMovie = (name, category, director, imageUrl) => {
+  return async (dispatch) => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    const body = JSON.stringify({ name, category, director, imageUrl });
+
+    try {
+      const res = await axios.post('/api/movies', body, config);
+      dispatch({
+        type: ADD_MOVIE,
+        payload: res.data,
+      });
+    } catch (err) {}
+  };
+};
+export const addStory = (name, story, writer, imageUrl) => {
+  return async (dispatch) => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    const body = JSON.stringify({ name, story, writer, imageUrl });
+
+    try {
+      const res = await axios.post('/api/stories', body, config);
+      dispatch({
+        type: ADD_STORY,
+        payload: res.data,
+      });
+    } catch (err) {}
   };
 };

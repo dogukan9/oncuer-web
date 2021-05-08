@@ -23,7 +23,10 @@ export const DISLIKE_FAVMOVIE = 'DISLIKE_FAVMOVIE';
 export const LIKE_FAVMOVIE = 'LIKE_FAVMOVIE';
 export const SET_LIKEFAVMOVIE = 'SET_LIKEFAVMOVIE';
 export const SET_LIKEFAVSTORY = 'SET_LIKEFAVSTORY';
-
+export const SET_COMMENTFAVMOVIE = 'SET_COMMENTFAVMOVIE';
+export const SET_COMMENTFAVSTORY = 'SET_COMMENTFAVSTORY';
+export const REMOVE_COMMENT_FAVSTORY = 'REMOVE_COMMENT_FAVSTORY';
+export const ADD_COMMENT_FAVSTORY = 'ADD_COMMENT_FAVSTORY';
 export const updateProfile = (age, bio) => {
   return async (dispatch) => {
     const config = {
@@ -166,42 +169,54 @@ export const getFavStories = (stories) => {
   return { type: GET_STORIES, payload: stories };
 };
 
-export const addCommentFavStory = (movieId, text) => {
+export const addCommentFavStory = (storyId, ownerId, userId, comment) => {
   return async (dispatch) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
       },
     };
-    const body = JSON.stringify({ text });
+    const body = JSON.stringify({ comment });
     try {
       const res = await axios.put(
-        `/api/movies/commentMovie/${movieId}`,
+        `/api/auth/commentFavoriteStory/${storyId}/${ownerId}`,
         body,
         config
       );
 
       dispatch({
-        type: ADD_COMMENT_FAVMOVIE,
+        type: ADD_COMMENT_FAVSTORY,
         payload: res.data,
-        id: movieId,
+        id: storyId,
       });
+      if (userId === ownerId) {
+        dispatch({
+          type: SET_COMMENTFAVSTORY,
+          payload: res.data,
+        });
+      }
     } catch (err) {
       console.log('hata var');
     }
   };
 };
-export const removeCommentFavStory = (comId, storyId) => {
+export const removeCommentFavStory = (comId, ownerId, userId, storyId) => {
   return async (dispatch) => {
     try {
       const res = await axios.delete(
-        `/api/movies/DeleteCommentMovie/${storyId}/${comId}`
+        `/api/auth/deleteCommentFavoriteStory/${storyId}/${comId}/${ownerId}`
       );
       dispatch({
-        type: REMOVE_COMMENT_FAVMOVIE,
+        type: REMOVE_COMMENT_FAVSTORY,
         payload: res.data,
         id: storyId,
       });
+      if (ownerId === userId) {
+        dispatch({
+          type: SET_COMMENTFAVSTORY,
+          payload: res.data,
+        });
+      }
     } catch (err) {
       console.log('hata var');
     }
@@ -252,17 +267,18 @@ export const dislikeFavStory = (storyId, ownId, userId) => {
   };
 };
 
-export const addCommentFavMovie = (movieId, text) => {
+export const addCommentFavMovie = (movieId, ownerId, userId, comment) => {
   return async (dispatch) => {
     const config = {
       headers: {
         'Content-Type': 'application/json',
       },
     };
-    const body = JSON.stringify({ text });
+
+    const body = JSON.stringify({ comment });
     try {
       const res = await axios.put(
-        `/api/movies/commentMovie/${movieId}`,
+        `/api/auth/commentFavoriteMovie/${movieId}/${ownerId}`,
         body,
         config
       );
@@ -272,22 +288,34 @@ export const addCommentFavMovie = (movieId, text) => {
         payload: res.data,
         id: movieId,
       });
+      if (userId === ownerId) {
+        dispatch({
+          type: SET_COMMENTFAVMOVIE,
+          payload: res.data,
+        });
+      }
     } catch (err) {
       console.log('hata var');
     }
   };
 };
-export const removeCommentFavMovie = (comId, movieId) => {
+export const removeCommentFavMovie = (comId, ownerId, userId, movieId) => {
   return async (dispatch) => {
     try {
       const res = await axios.delete(
-        `/api/movies/DeleteCommentMovie/${movieId}/${comId}`
+        `/api/auth/deleteCommentFavoriteMovie/${movieId}/${comId}/${ownerId}`
       );
       dispatch({
         type: REMOVE_COMMENT_FAVMOVIE,
         payload: res.data,
         id: movieId,
       });
+      if (userId === ownerId) {
+        dispatch({
+          type: SET_COMMENTFAVMOVIE,
+          payload: res.data,
+        });
+      }
     } catch (err) {
       console.log('hata var');
     }

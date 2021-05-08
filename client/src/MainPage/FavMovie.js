@@ -4,7 +4,6 @@ import {
   CardImg,
   CardBody,
   CardTitle,
-  Button,
   CardSubtitle,
   Col,
   Row,
@@ -112,7 +111,14 @@ const FavMovie = (props) => {
             onSubmit={(e) => {
               e.preventDefault();
 
-              dispatch(addCommentFavMovie(movie._id, text));
+              dispatch(
+                addCommentFavMovie(
+                  movie._id,
+                  props.match.params.id,
+                  user._id,
+                  text
+                )
+              );
               setText('');
             }}
           >
@@ -168,7 +174,12 @@ const FavMovie = (props) => {
                             className={`btn btn-danger ${classes.buton}`}
                             onClick={(e) => {
                               dispatch(
-                                removeCommentFavMovie(com._id, movie._id)
+                                removeCommentFavMovie(
+                                  com._id,
+                                  props.match.params.id,
+                                  user._id,
+                                  movie._id
+                                )
                               );
                             }}
                             type='button'

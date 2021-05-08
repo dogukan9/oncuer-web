@@ -23,6 +23,8 @@ import FavStory from './MainPage/FavStory';
 import StoryById from './MainPage/StoryById';
 import FavoriteMovies from './Profile/FavoriteMovies';
 import FavoriteStories from './Profile/FavoriteStories';
+import AddMovie from './MainPage/AddMovie/AddMovie';
+import AddStory from './MainPage/AddStory/AddStory';
 
 import Alert from './Alert/Alert';
 import setAuthToken from './setAuthToken/setAuthToken';
@@ -78,7 +80,16 @@ const App = () => {
               <PrivateRoute exact path='/main_page' component={MainPage} />
               <Route exact path='/movies' component={Movies} />
               <Route exact path='/stories' component={Stories} />
-
+              <PrivateRoute
+                exact
+                path='/AddMovie/:person'
+                component={AddMovie}
+              />
+              <PrivateRoute
+                exact
+                path='/AddStory/:person'
+                component={AddStory}
+              />
               <PrivateRoute exact path='/api/movies/:id' component={Movie} />
               <PrivateRoute
                 exact
@@ -105,6 +116,7 @@ const App = () => {
                 path='/favoriteStories/:person'
                 component={FavoriteStories}
               />
+
               <PrivateRoute exact path='/profile/:id' component={Profile} />
 
               <Route path='/' component={NotFound} />

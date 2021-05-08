@@ -1,0 +1,57 @@
+.card {
+  width: 50rem;
+  position: absolute;
+  left: 15rem;
+  height: 50rem;
+  border: 12px dashed black;
+  background-image: url('./story.jpg');
+  object-fit: contain;
+}
+
+.cardTitle {
+  font-size: 5rem;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.form {
+  width: 40rem;
+  height: 40rem;
+  z-index: 0;
+}
+
+.formGroup {
+  position: relative;
+  left: 12rem;
+  margin: 1rem;
+  width: 16rem;
+  height: 3rem;
+  justify-content: center;
+  text-align: center;
+}
+.textarea {
+  position: relative;
+  left: 12rem;
+  margin: 1rem;
+  width: 19rem;
+  height: 10rem;
+}
+
+.button {
+  font-size: 2rem;
+  position: relative;
+  left: 12rem;
+  margin: 3rem;
+  justify-content: center;
+  text-align: center;
+}
+
+.link {
+  font-size: 2rem;
+  position: relative;
+  left: 16rem;
+  margin: 3rem;
+  justify-content: center;
+  text-align: center;
+}

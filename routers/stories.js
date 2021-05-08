@@ -60,7 +60,8 @@ router.post(
       });
 
       await newStory.save();
-      res.json(newStory);
+      const stories = await Story.find();
+      res.json(stories);
     } catch (error) {
       res.status(404).json({ msg: 'there is an error' });
     }

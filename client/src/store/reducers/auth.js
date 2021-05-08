@@ -12,6 +12,8 @@ import {
   CHANGE_FAVORITE_MOVIES,
   SET_LIKEFAVMOVIE,
   SET_LIKEFAVSTORY,
+  SET_COMMENTFAVMOVIE,
+  SET_COMMENTFAVSTORY,
 } from '../actions/profile';
 const initialState = {
   token: localStorage.getItem('token'),
@@ -33,6 +35,8 @@ export default function (state = initialState, action) {
       };
     case SET_LIKEFAVMOVIE:
     case SET_LIKEFAVSTORY:
+    case SET_COMMENTFAVMOVIE:
+    case SET_COMMENTFAVSTORY:
       return {
         ...state,
         user: action.payload,

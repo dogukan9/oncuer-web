@@ -14,6 +14,10 @@ import {
   DISLIKE_FAVMOVIE,
   LIKE_FAVSTORY,
   DISLIKE_FAVSTORY,
+  ADD_COMMENT_FAVMOVIE,
+  REMOVE_COMMENT_FAVMOVIE,
+  ADD_COMMENT_FAVSTORY,
+  REMOVE_COMMENT_FAVSTORY,
 } from '../actions/profile';
 
 const initialState = {
@@ -28,6 +32,10 @@ export default function (state = initialState, action) {
     case DISLIKE_FAVMOVIE:
     case LIKE_FAVSTORY:
     case DISLIKE_FAVSTORY:
+    case ADD_COMMENT_FAVMOVIE:
+    case REMOVE_COMMENT_FAVMOVIE:
+    case ADD_COMMENT_FAVSTORY:
+    case REMOVE_COMMENT_FAVSTORY:
       return {
         ...state,
         user: payload,

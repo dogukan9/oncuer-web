@@ -410,7 +410,7 @@ router.put(
 //comment favorite movies
 
 router.put(
-  '/:ownerId/commentFavoriteMovie/:movieId',
+  '/commentFavoriteMovie/:movieId/:ownerId',
   [middleware],
   async (req, res) => {
     try {
@@ -420,14 +420,16 @@ router.put(
       }
 
       const { comment } = req.body;
+
       const addIndex = user.favoriteMovies
         .map((fav) => fav.id.toString())
         .indexOf(req.params.movieId);
 
       user.favoriteMovies[addIndex].comments.push({
         user: req.user.id,
+
         text: comment,
-        name: req.user.username,
+        username: req.user.username,
       });
       await user.save();
       return res.json(user);
@@ -440,7 +442,7 @@ router.put(
 //comment favorite storie
 
 router.put(
-  '/:ownerId/commentFavoriteStory/:storyId',
+  '/commentFavoriteStory/:storyId/:ownerId',
   [middleware],
   async (req, res) => {
     try {
@@ -457,7 +459,7 @@ router.put(
       user.favoriteStories[addIndex].comments.push({
         user: req.user.id,
         text: comment,
-        name: req.user.username,
+        username: req.user.username,
       });
       await user.save();
       return res.json(user);
@@ -470,7 +472,7 @@ router.put(
 ////remove comment favorite movies
 
 router.delete(
-  '/:ownerId/deleteCommentFavoriteMovie/:movieId/:commentId',
+  '/deleteCommentFavoriteMovie/:movieId/:commentId/:ownerId',
   [middleware],
   async (req, res) => {
     try {
@@ -504,7 +506,7 @@ router.delete(
 ///remove comment favorite story
 
 router.delete(
-  '/:ownerId/deleteCommentFavoriteStory/:movieId/:commentId',
+  '/deleteCommentFavoriteStory/:storyId/:commentId/:ownerId',
   [middleware],
   async (req, res) => {
     try {

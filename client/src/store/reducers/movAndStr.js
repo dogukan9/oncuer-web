@@ -15,6 +15,8 @@ import {
   ADD_COMMENT_MOVIE,
   REMOVE_COMMENT_MOVIE,
   ADD_COMMENT_STORY,
+  ADD_MOVIE,
+  ADD_STORY,
   REMOVE_COMMENT_STORY,
 } from '../actions/movieAndstory';
 
@@ -41,6 +43,7 @@ export default function (state = initialState, action) {
       };
 
     case LIKE_MOVIE:
+    case ADD_MOVIE:
     case DISLIKE_MOVIE:
       return {
         ...state,
@@ -67,23 +70,12 @@ export default function (state = initialState, action) {
 
     case LIKE_STORY:
     case DISLIKE_STORY:
+    case ADD_STORY:
       return {
         ...state,
         stories: action.payload,
       };
-    /* case LIKE_MOVIEE:
-    case DISLIKE_MOVIEE:
-      return {
-        ...state,
-        movie: action.payload,
-      };
-    case LIKE_STORYY:
-    case DISLIKE_STORYY:
-      return {
-        ...state,
-        story: action.payload,
-      };
-*/
+
     case GET_STORY:
       return {
         ...state,

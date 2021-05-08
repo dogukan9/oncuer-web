@@ -54,8 +54,9 @@ router.post(
         user: req.user.id,
       });
 
-      const movie = await newMovies.save();
-      res.json(movie);
+      await newMovies.save();
+      const movies = await Movie.find();
+      res.json(movies);
     } catch (error) {
       res.status(404).json({ msg: 'there is an error' });
     }
