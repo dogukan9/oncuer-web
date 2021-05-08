@@ -1,0 +1,26 @@
+.image {
+  background: url('./bgimage.jpg');
+  background-size: cover;
+  height: 87vh;
+}
+.box {
+  width: 29.5rem;
+  height: 22rem;
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  box-sizing: border-box;
+  background: url('./login.png');
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  margin: 10px;
+  color: white;
+}
+.inputs {
+  padding: auto;
+  margin: 1.5rem;
+  position: relative;
+
+  left: 10%;
+  top: 5%;
+}

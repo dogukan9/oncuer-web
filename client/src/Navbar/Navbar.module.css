@@ -1,0 +1,28 @@
+.icon {
+  font-size: 40px;
+}
+
+.margin {
+  margin: 5px;
+
+  width: 20rem;
+}
+/* unvisited link*/
+.a:link {
+  color: red;
+}
+
+/* visited link */
+.a:visited {
+  color: black;
+}
+
+/* mouse over link */
+.a:hover {
+  color: rgb(133, 128, 60);
+}
+
+/* selected link */
+.a:active {
+  color: rgb(8, 8, 110);
+}

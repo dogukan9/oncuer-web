@@ -1,0 +1,61 @@
+.image {
+  background: url('./image.jpg');
+  background-size: contain;
+}
+
+.margin {
+  margin-bottom: 30px;
+}
+
+.post {
+  background: var(--primary-color);
+  padding: 0.5rem;
+}
+.form .form-text {
+  display: block;
+  margin-top: 0.3rem;
+  color: #888;
+}
+.p {
+  padding: 0.5rem;
+}
+.my {
+  margin: 1rem 0;
+}
+
+.post-form .post-form-header {
+  background: var(--primary-color);
+  padding: 0.5rem;
+}
+
+.roundimg {
+  border-radius: 50%;
+}
+
+.my1 {
+  margin: 1rem 0;
+}
+.p1 {
+  padding: 1rem;
+}
+.bg-white,
+.badge-white,
+.alert-white {
+  background: #fff;
+  color: #333;
+  border: #ccc solid 1px;
+}
+.post .post-date {
+  color: #aaa;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+.tarih {
+  position: absolute;
+  right: 3rem;
+}
+.buton {
+  position: absolute;
+  right: 3rem;
+  top: 10rem;
+}

@@ -1,0 +1,27 @@
+.post-form .post-form-header {
+  background: var(--primary-color);
+  padding: 0.5rem;
+}
+
+.round-img {
+  border-radius: 50%;
+}
+
+.my-1 {
+  margin: 1rem 0;
+}
+.p-1 {
+  padding: 1rem;
+}
+.bg-white,
+.badge-white,
+.alert-white {
+  background: #fff;
+  color: #333;
+  border: #ccc solid 1px;
+}
+.post .post-date {
+  color: #aaa;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
