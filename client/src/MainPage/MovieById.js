@@ -45,11 +45,11 @@ const Movie = (props) => {
   }
 
   return (
-    <div className='container'>
+    <div>
       {movie ? (
-        <Card>
+        <Card className={classes.container}>
           <CardImg
-            style={{ maxHeight: '50rem' }}
+            className={classes.CardImg}
             top
             width='100%'
             src={movie.imageUrl}
@@ -116,7 +116,7 @@ const Movie = (props) => {
       {showCom && (
         <div className={classes.post}>
           <form
-            className={`${classes.form} ${classes.my}`}
+            className={classes.form}
             onSubmit={(e) => {
               e.preventDefault();
 
@@ -125,6 +125,7 @@ const Movie = (props) => {
             }}
           >
             <textarea
+              className={classes.form}
               name='text'
               cols='90'
               rows='5'
@@ -138,11 +139,7 @@ const Movie = (props) => {
 
           {movie.comments.map((com) => {
             return (
-              <Card
-                className={
-                  (classes.post, classes.bgwhite, classes.p1, classes.my1)
-                }
-              >
+              <Card className={classes.comment}>
                 <CardBody>
                   <Row>
                     <Col xs='3'>
@@ -153,36 +150,37 @@ const Movie = (props) => {
                           alt=''
                         />
 
-                        <CardSubtitle
-                          style={{ position: 'absolute', left: '5rem' }}
-                          tag='h4'
-                          className='mb-2 text-muted'
-                        >
+                        <CardSubtitle tag='h4' className={classes.commentName}>
                           {com.username}
                         </CardSubtitle>
                       </Link>
                     </Col>
                     <Col xs='9'>
-                      <div style={{ display: 'inline-block' }}>
-                        <CardSubtitle class='my-1'>
+                      <div>
+                        <CardSubtitle
+                          className={classes.commentText}
+                          class='my-1'
+                        >
                           <strong>{com.text}</strong>
                         </CardSubtitle>
                         <CardSubtitle tag='h5' className={classes.tarih}>
                           Yayınlandı{' '}
                           <Moment format='YYYY/MM/DD'>{com.date}</Moment>
+                          {!user.loading && com.user === user._id && (
+                            <button
+                              className={`btn btn-danger ${classes.buton}`}
+                              onClick={(e) => {
+                                dispatch(
+                                  removeCommentMovie(com._id, movie._id)
+                                );
+                              }}
+                              type='button'
+                            >
+                              {' '}
+                              <i className='fas fa-times' />
+                            </button>
+                          )}
                         </CardSubtitle>
-                        {!user.loading && com.user === user._id && (
-                          <button
-                            className={`btn btn-danger ${classes.buton}`}
-                            onClick={(e) => {
-                              dispatch(removeCommentMovie(com._id, movie._id));
-                            }}
-                            type='button'
-                          >
-                            {' '}
-                            Sil <i className='fas fa-times' />
-                          </button>
-                        )}
                       </div>
                     </Col>
                   </Row>

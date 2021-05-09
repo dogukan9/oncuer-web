@@ -52,15 +52,15 @@ router.get('/', middleware, async (req, res) => {
 //login
 router.post(
   '/',
-  [
+  /* [
     check('email', 'email is required').isEmail(),
     check('password', 'password is required').exists(),
-  ],
+  ],*/
   async (req, res) => {
     const errors = validationResult(req);
-    if (!errors.isEmpty()) {
+    /*  if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
-    }
+    }*/
     const { email, password } = req.body;
 
     try {

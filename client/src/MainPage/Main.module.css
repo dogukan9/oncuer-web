@@ -2,19 +2,28 @@
   background: url('./image.jpg');
   background-size: contain;
 }
-
+.container {
+  justify-content: flex;
+  align-items: center;
+  background-color: rgb(184, 184, 199);
+}
+.CardImg {
+  max-width: 20rem;
+}
 .margin {
   margin-bottom: 30px;
 }
 
 .post {
   background: var(--primary-color);
-  padding: 0.5rem;
+  padding: 1.5rem;
 }
-.form .form-text {
+.form,
+.form-text {
   display: block;
   margin-top: 0.3rem;
-  color: #888;
+  width: 30rem;
+  color: black;
 }
 .p {
   padding: 0.5rem;
@@ -45,6 +54,21 @@
   color: #333;
   border: #ccc solid 1px;
 }
+.comment {
+  width: 50rem;
+  margin: 2rem;
+}
+.commentName {
+  position: absolute;
+  left: 5rem;
+}
+.commentText {
+  max-width: 40rem;
+  height: 10rem;
+  position: relative;
+  left: 1.5rem;
+  overflow: auto;
+}
 .post .post-date {
   color: #aaa;
   font-size: 0.8rem;
@@ -52,10 +76,216 @@
 }
 .tarih {
   position: absolute;
-  right: 3rem;
+  margin: 2rem;
+  right: 2rem;
+  bottom: 0rem;
 }
 .buton {
   position: absolute;
-  right: 3rem;
-  top: 10rem;
+  right: -3rem;
+  top: -0.5rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .comment {
+    width: 40rem;
+  }
+  .roundimg {
+    border-radius: 50%;
+    width: 10rem;
+  }
+  .buton {
+    position: absolute;
+    right: -3rem;
+    top: -0.5rem;
+  }
+  .commentText {
+    max-width: 40rem;
+    height: 8rem;
+    position: relative;
+    left: 1.5rem;
+    overflow: auto;
+  }
+
+  .tarih {
+    position: absolute;
+    margin: 2rem;
+    right: 2rem;
+    bottom: 0rem;
+  }
+}
+@media (min-width: 900px) and (max-width: 980px) {
+  .comment {
+    width: 40rem;
+  }
+  .roundimg {
+    border-radius: 50%;
+    width: 10rem;
+  }
+  .buton {
+    position: absolute;
+    right: -3rem;
+    top: -0.5rem;
+  }
+  .commentText {
+    max-width: 40rem;
+    height: 8rem;
+    position: relative;
+    left: 1.5rem;
+    overflow: auto;
+  }
+
+  .tarih {
+    position: absolute;
+    margin: 2rem;
+    right: 2rem;
+    bottom: 0rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .comment {
+    width: 40rem;
+  }
+  .roundimg {
+    border-radius: 50%;
+    width: 10rem;
+  }
+  .buton {
+    position: absolute;
+    right: -3rem;
+    top: -0.5rem;
+  }
+  .commentText {
+    max-width: 40rem;
+    height: 8rem;
+    position: relative;
+    left: 1.5rem;
+    overflow: auto;
+  }
+
+  .tarih {
+    position: absolute;
+    margin: 2rem;
+    right: 2rem;
+    bottom: 0rem;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .comment {
+    width: 34rem;
+    height: 10rem;
+  }
+  .roundimg {
+    border-radius: 50%;
+    width: 6rem;
+  }
+  .buton {
+    position: absolute;
+
+    right: -3rem;
+    top: -0.5rem;
+  }
+  .commentText {
+    max-width: 22rem;
+    height: 6rem;
+    position: relative;
+    left: 1.5rem;
+    overflow: auto;
+  }
+
+  .tarih {
+    position: absolute;
+    font-size: 1rem;
+    margin: 2rem;
+    right: 1rem;
+    bottom: -2rem;
+  }
+  .commentName {
+    position: absolute;
+    left: 1rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .comment {
+    position: absolute;
+    left: -2rem;
+    width: 30rem;
+    height: 10rem;
+  }
+  .form,
+  .form-text {
+    display: block;
+    margin-top: 0.3rem;
+    width: 25rem;
+    color: #888;
+  }
+  .roundimg {
+    border-radius: 50%;
+    width: 6rem;
+  }
+  .buton {
+    position: absolute;
+
+    right: -3rem;
+    top: -0.5rem;
+  }
+  .commentText {
+    max-width: 22rem;
+    height: 6rem;
+    position: relative;
+    left: 1.5rem;
+    overflow: auto;
+  }
+
+  .tarih {
+    position: absolute;
+    font-size: 1rem;
+    margin: 2rem;
+    right: 1rem;
+    bottom: -2rem;
+  }
+  .commentName {
+    position: absolute;
+    left: 1rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .comment {
+    position: absolute;
+    left: -2rem;
+    width: 25rem;
+    height: 10rem;
+  }
+  .roundimg {
+    border-radius: 50%;
+    width: 6rem;
+  }
+  .buton {
+    position: absolute;
+
+    right: -3rem;
+    top: -0.5rem;
+  }
+  .commentText {
+    max-width: 22rem;
+    height: 6rem;
+    position: relative;
+    left: 1.5rem;
+    overflow: auto;
+  }
+
+  .tarih {
+    position: absolute;
+    font-size: 1rem;
+    margin: 2rem;
+    right: 1rem;
+    bottom: -2rem;
+  }
+  .commentName {
+    position: absolute;
+    left: 1rem;
+  }
 }

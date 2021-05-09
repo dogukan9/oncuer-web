@@ -1,7 +1,7 @@
 .card {
   width: 50rem;
   position: absolute;
-  left: 15rem;
+  left: 10rem;
   height: 50rem;
   border: 12px dashed black;
   background-image: url('./story.jpg');
@@ -23,7 +23,7 @@
 
 .formGroup {
   position: relative;
-  left: 12rem;
+  left: 15rem;
   margin: 1rem;
   width: 16rem;
   height: 3rem;
@@ -32,9 +32,9 @@
 }
 .textarea {
   position: relative;
-  left: 12rem;
+  left: 15rem;
   margin: 1rem;
-  width: 19rem;
+  width: 16rem;
   height: 10rem;
 }
 
@@ -54,4 +54,185 @@
   margin: 3rem;
   justify-content: center;
   text-align: center;
+}
+
+@media only screen and (max-width: 1100px) {
+  .card {
+    width: 40rem;
+    position: absolute;
+    left: 4rem;
+    height: 42rem;
+    border: 12px dashed black;
+    background-image: url('./story.jpg');
+    object-fit: contain;
+  }
+
+  .cardTitle {
+    font-size: 5rem;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+
+  .form {
+    width: 40rem;
+    height: 40rem;
+    z-index: 0;
+  }
+
+  .formGroup {
+    position: relative;
+    left: 12rem;
+    margin: 1rem;
+    width: 16rem;
+    height: 3rem;
+    justify-content: center;
+    text-align: center;
+  }
+  .textarea {
+    position: relative;
+    left: 12rem;
+    margin: 1rem;
+    width: 16rem;
+    height: 10rem;
+  }
+
+  .button {
+    font-size: 2rem;
+    position: relative;
+    left: 1rem;
+    margin: 3rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .link {
+    font-size: 2rem;
+    position: relative;
+    left: 16rem;
+    margin: 3rem;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .card {
+    width: 30rem;
+    position: absolute;
+    left: 4rem;
+    height: 35rem;
+    border: 12px dashed black;
+    background-image: url('./story.jpg');
+    object-fit: contain;
+  }
+
+  .cardTitle {
+    font-size: 3rem;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+
+  .form {
+    width: 30rem;
+    height: 40rem;
+    z-index: 0;
+  }
+
+  .formGroup {
+    position: relative;
+    left: 7rem;
+    margin: 1rem;
+    width: 16rem;
+    height: 3rem;
+    justify-content: center;
+    text-align: center;
+  }
+  .textarea {
+    position: relative;
+    left: 7rem;
+    margin: 1rem;
+    width: 16rem;
+    height: 10rem;
+  }
+
+  .button {
+    font-size: 2rem;
+    position: relative;
+    left: 1rem;
+    margin: 3rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .link {
+    font-size: 2rem;
+    position: relative;
+    left: 10rem;
+    margin: 3rem;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 621px) {
+  .card {
+    width: 20rem;
+    position: absolute;
+    left: 4rem;
+    height: 35rem;
+    border: 12px dashed black;
+    background-image: url('./story.jpg');
+    object-fit: contain;
+  }
+
+  .cardTitle {
+    font-size: 3rem;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+
+  .form {
+    width: 30rem;
+    height: 40rem;
+    z-index: 0;
+  }
+
+  .formGroup {
+    position: relative;
+    left: 5rem;
+    margin: 1rem;
+    width: 10rem;
+    height: 3rem;
+    justify-content: center;
+    text-align: center;
+  }
+  .textarea {
+    position: relative;
+    left: 5rem;
+    margin: 1rem;
+    width: 10rem;
+    height: 6rem;
+  }
+
+  .button {
+    font-size: 2rem;
+    position: relative;
+    left: 0.5rem;
+    margin: 3rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .link {
+    font-size: 2rem;
+    position: relative;
+    left: 10rem;
+    bottom: 8rem;
+    margin: 3rem;
+    justify-content: center;
+    text-align: center;
+  }
 }

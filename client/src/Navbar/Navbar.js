@@ -67,7 +67,7 @@ const Navbarr = (props) => {
         </Link>
       </NavItem>
       {isAuthenticated && (
-        <NavItem>
+        <NavItem style={{ marginLeft: '0.3rem', marginTop: '0.3rem' }}>
           <a
             href='/'
             className='btn btn-danger'

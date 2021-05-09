@@ -50,29 +50,29 @@ const Profile = (props) => {
               <br />
               <br />
               {edit ? (
-                <div className={classes.p}>
-                  {' '}
-                  <label>Bio:</label>
+                <div>
                   <textarea
-                    style={{ height: '8rem', width: '18rem' }}
+                    className={classes.p}
                     name='bio'
+                    maxLength='75'
+                    placeholder='Give some information about you'
                     onChange={(e) => onChange(e)}
                     value={bio}
                   />
                 </div>
               ) : (
                 <p className={classes.p}>
-                  <strong>Hakkımda:</strong>
+                  <strong>About: </strong>
                   {user.bio}
                 </p>
               )}
 
               {edit ? (
-                <div className={classes.p}>
-                  {' '}
-                  <label>Yaş:</label>
+                <div>
                   <input
+                    className={classes.age}
                     type='text'
+                    placeholder='Your Age'
                     onChange={(e) => onChange(e)}
                     value={age}
                     name='age'
@@ -110,7 +110,7 @@ const Profile = (props) => {
           >
             <h1>
               <a
-                style={{ color: 'white' }}
+                className={classes.a}
                 href={`/favoriteMovies/${props.match.params.id}`}
               >
                 Favorite Movies
@@ -121,21 +121,16 @@ const Profile = (props) => {
         <Col xs='6'>
           <Link
             to={`/favoriteStories/${props.match.params.id}`}
-            className={`btn btn-primary ${classes.buttonMovie} `}
+            className={`btn btn-primary ${classes.buttonStory} `}
           >
-            <Button
-              className={`btn btn-primary ${classes.buttonStory} ${classes.boxes}`}
-            >
-              <h1>
-                {' '}
-                <a
-                  style={{ color: 'white' }}
-                  href={`/favoriteMovies/${props.match.params.id}`}
-                >
-                  Favorite Stories
-                </a>
-              </h1>{' '}
-            </Button>
+            <h1>
+              <a
+                className={`${classes.a} ${classes.b}`}
+                href={`/favoriteStories/${props.match.params.id}`}
+              >
+                Favorite Stories
+              </a>
+            </h1>{' '}
           </Link>
         </Col>
       </Row>

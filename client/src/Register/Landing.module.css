@@ -11,7 +11,7 @@
   left: 35%;
   box-sizing: border-box;
   background: url('./login.png');
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   padding: 10px;
   margin: 10px;
   color: white;
@@ -23,4 +23,185 @@
 
   left: 10%;
   top: 5%;
+}
+
+@media only screen and (max-width: 1260px) {
+  .image {
+    background: url('./bgimage.jpg');
+    background-size: cover;
+    height: 87vh;
+  }
+  .box {
+    width: 24.5rem;
+    height: 22rem;
+    position: absolute;
+    top: 40%;
+    left: 19rem;
+    box-sizing: border-box;
+    background: url('./login.png');
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+  }
+  .inputs {
+    padding: auto;
+    margin: 1.5rem;
+    position: relative;
+
+    left: 10%;
+    top: 5%;
+  }
+  .buttons {
+    position: absolute;
+  }
+
+  .link {
+    position: absolute;
+    right: 1rem;
+    top: 5rem;
+  }
+  .p {
+    position: relative;
+    right: 4rem;
+    top: 5rem;
+  }
+}
+@media only screen and (max-width: 860px) {
+  .image {
+    background: url('./bgimage.jpg');
+    background-size: cover;
+    height: 87vh;
+  }
+  .box {
+    width: 20.5rem;
+    height: 22rem;
+    position: absolute;
+    top: 35%;
+    left: 17rem;
+    box-sizing: border-box;
+    background: url('./login.png');
+    background-color: white;
+    padding: 5px;
+    margin: 1px;
+    color: white;
+  }
+  .inputs {
+    margin: 1.5rem;
+    position: relative;
+
+    left: 10%;
+    top: 5%;
+  }
+
+  .buttons {
+    position: absolute;
+  }
+
+  .link {
+    position: absolute;
+    right: 1rem;
+    top: 3rem;
+  }
+  .p {
+    position: relative;
+    right: 3rem;
+    top: 3rem;
+  }
+}
+
+@media only screen and (max-width: 730px) {
+  .image {
+    background: url('./bgimage.jpg');
+    background-size: cover;
+    height: 87vh;
+  }
+  .box {
+    width: 14.5rem;
+    height: 22rem;
+    position: absolute;
+    top: 35%;
+    left: 14rem;
+    box-sizing: border-box;
+    background: url('./login.png');
+    background-color: white;
+    padding: 5px;
+    margin: 1px;
+    color: white;
+  }
+  .inputs {
+    margin: 1.5rem;
+    position: relative;
+
+    left: 4%;
+    top: 5%;
+  }
+  .kutu {
+    width: 8rem;
+  }
+  .buttons {
+    position: absolute;
+  }
+
+  .link {
+    position: absolute;
+    right: -1rem;
+    top: 3rem;
+  }
+  .p {
+    display: none;
+    color: blueviolet;
+    position: relative;
+    right: 3rem;
+
+    top: 3rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .image {
+    background: url('./bgimage.jpg');
+    background-size: cover;
+    height: 87vh;
+  }
+  .box {
+    width: 14.5rem;
+    height: 22rem;
+    position: absolute;
+    top: 35%;
+    left: 9rem;
+    box-sizing: border-box;
+    background: url('./login.png');
+    background-color: white;
+    padding: 5px;
+    margin: 1px;
+    color: white;
+  }
+  .inputs {
+    margin: 1.5rem;
+    position: relative;
+
+    left: 4%;
+    top: 5%;
+  }
+  .kutu {
+    width: 8rem;
+  }
+  .buttons {
+    position: absolute;
+  }
+
+  .link {
+    position: absolute;
+    right: -1rem;
+    top: 3rem;
+  }
+  .p {
+    display: none;
+    color: blueviolet;
+    position: relative;
+    right: 3rem;
+
+    top: 3rem;
+  }
 }

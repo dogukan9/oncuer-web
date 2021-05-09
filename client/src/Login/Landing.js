@@ -33,8 +33,8 @@ const Landing = (props) => {
   }
 
   return (
-    <div className={`${classes.image}`}>
-      <div className='container'>
+    <div>
+      <div className={`${classes.image}`}>
         {alerts && <Alert />}
         {loading ? (
           <Spinner />
@@ -50,8 +50,10 @@ const Landing = (props) => {
                   Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;{' '}
                 </label>
                 <input
+                  className={classes.kutu}
                   type='text'
                   name='email'
+                  required
                   value={email}
                   onChange={(e) => onChange(e)}
                 />
@@ -62,8 +64,10 @@ const Landing = (props) => {
                 </span>
                 <label>Password:&nbsp;&nbsp;&nbsp; </label>
                 <input
+                  className={classes.kutu}
                   type='password'
                   name='password'
+                  required
                   value={password}
                   onChange={(e) => onChange(e)}
                 />
@@ -71,18 +75,21 @@ const Landing = (props) => {
               <div className={classes.inputs}>
                 <button
                   type='submit'
-                  className='btn btn-primary'
+                  className={`btn btn-primary ${classes.buttons}`}
                   style={{ display: 'block', margin: 'auto' }}
                 >
                   {' '}
                   Login
                 </button>
-                <p style={{ display: 'inline-block' }}>
+                <p className={classes.p}>
                   Click here if you don't have an account-
                 </p>
-                <Button style={{ font: 'blue', backgroundColor: 'white' }}>
-                  <Link to='/register'>Register</Link>
-                </Button>
+                <Link
+                  to='/register'
+                  className={`btn btn-success ${classes.link}`}
+                >
+                  Register
+                </Link>
               </div>
             </form>
           </div>

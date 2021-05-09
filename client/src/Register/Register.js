@@ -36,6 +36,8 @@ const Register = (props) => {
           <form onSubmit={(e) => onSubmit(e)}>
             <div className={classes.inputs}>
               <h4 style={{ display: 'block' }}>Register Page</h4>
+              <i className='fas fa-user'></i>
+
               <label>Username: </label>
               <input
                 type='text'
@@ -46,7 +48,8 @@ const Register = (props) => {
               />
             </div>
             <div className={classes.inputs}>
-              <label>Email: </label>
+              <i class='fas fa-envelope-square'></i> <label>Email: </label>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <input
                 type='email'
                 name='email'
@@ -55,7 +58,8 @@ const Register = (props) => {
               />
             </div>
             <div className={classes.inputs}>
-              <label>Password: </label>
+              <i className='fas fa-key'></i>
+              <label>Password: </label>&nbsp;
               <input
                 type='password'
                 name='password'
