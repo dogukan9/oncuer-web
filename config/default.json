@@ -1,5 +1,5 @@
 {
-    "mongoURI":"mongodb+srv://dogukanoncuer:dogukanoncuer@dogukan.tz9pz.mongodb.net/Edebinema?retryWrites=true&w=majority",
+    "mongoURI":"mongodb+srv://dogukanoncuer:<your password>@dogukan.tz9pz.mongodb.net/Edebinema?retryWrites=true&w=majority",
     "jwtSecret":"mysecrettoken",
     "githubClientId":"a8ca988cb0e96e801f2f",
     "githubSecret":"7eca91c12d1b9983da1f8728f9bf4e588c33fcf2"
